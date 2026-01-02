@@ -1,0 +1,12 @@
+xgboost
+scikit-learn
+pandas
+numpy
+mlflow
+transformers
+sentence-transformers
+faiss-cpu
+streamlit
+torch
+bitsandbytes
+ucimlrepo

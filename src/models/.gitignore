@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data files
+*.csv
+
+# Model artifacts
+*.pkl
+
+# Logs
+logs/
+mlruns/
+
+# IDE
+.vscode/
+.idea/
