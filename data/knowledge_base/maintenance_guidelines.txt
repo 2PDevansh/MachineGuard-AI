@@ -1,0 +1,16 @@
+Predictive Maintenance Guidelines
+
+1. High temperature difference combined with high tool wear
+   indicates potential heat dissipation failure.
+
+2. High power consumption outside normal operating range
+   may indicate power failure or mechanical resistance.
+
+3. High torque combined with excessive tool wear
+   suggests overstrain failure.
+
+4. Low failure probability (<0.2) typically indicates
+   healthy machine operation.
+
+5. Preventive maintenance is recommended when failure
+   probability exceeds 0.6.
