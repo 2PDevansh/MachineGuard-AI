@@ -7,12 +7,12 @@
 ![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-black)
 
- **Predictive Maintenance AI with RAG-Powered Engineer Assistant**
+ **####Predictive Maintenance AI with RAG-Powered Engineer Assistant**
 
 An end-to-end **Predictive Maintenance System** that combines classical machine learning with a **Retrieval-Augmented Generation (RAG)** based AI Maintenance Engineer. The system predicts equipment failure probability and provides **human-readable maintenance recommendations** using open-source LLMs.
 
 
-**Key Features**
+**##Key Features**
 
 -Failure prediction using XGBoost Classifier
 
@@ -28,7 +28,8 @@ An end-to-end **Predictive Maintenance System** that combines classical machine 
 
 -Clean, modular industry-grade project structure
 
- **System Architecture**
+ **##System Architecture**
+ 
 Sensor Data
    ↓
 Preprocessing & Feature Engineering
@@ -41,38 +42,39 @@ LLM Maintenance Reasoning
    ↓
 Streamlit UI Output
 
- **Tech Stack**
--Machine Learning
+ **##Tech Stack**
+ 
+       -Machine Learning
 
--Python 3.10+
+        -Python 3.10+
 
--XGBoost
+       -XGBoost
 
--Scikit-learn
+       -Scikit-learn
 
--Pandas, NumPy
+       -Pandas, NumPy
 
--GenAI / RAG
+       -GenAI / RAG
 
--Hugging Face Transformers
+      -Hugging Face Transformers
 
--Sentence-Transformers
+     -Sentence-Transformers
 
--FAISS (CPU)
+      -FAISS (CPU)
 
--Open-source LLM (Colab-friendly)
+      -Open-source LLM (Colab-friendly)
 
--MLOps & App
+      -MLOps & App
 
--Streamlit
+     -Streamlit
 
--Pickle (model persistence)
+      -Pickle (model persistence)
 
--Modular pipeline design
+      -Modular pipeline design
 
--Google Colab (T4 GPU compatible)
+      -Google Colab (T4 GPU compatible)
 
-📁 **Project Structure**
+📁 **##Project Structure**
 ```
 PREDICTIVE_MAINTAINANCE-AI/
 │
@@ -113,22 +115,22 @@ PREDICTIVE_MAINTAINANCE-AI/
 └── README.md
 ```
 
- **Dataset**
+ **##Dataset**
 
-**-** **Source**: UCI AI4I 2020 Predictive Maintenance Dataset
+           *-*Source**: UCI AI4I 2020 Predictive Maintenance Dataset
 
-**-** **Type**: Industrial sensor telemetry
+          *-*Type**: Industrial sensor telemetry
 
-**-** **Target**: Machine failure (binary classification)
+          *-* **Target**: Machine failure (binary classification)
 
- **Setup Instructions**
+ **##Setup Instructions**
  
- **-Install dependencies**
+       **-Install dependencies**
   ```
 pip install -r requirements.txt
 ```
 
-  **-Build FAISS Knowledge Index (One-Time)**
+      **-Build FAISS Knowledge Index (One-Time)**
 ```
 python src/llm/build_retriever.py
 ```
@@ -140,7 +142,7 @@ python src/llm/build_retriever.py
    -chunks.pkl
 ```
 
-  **-Train ML Model**
+     **-Train ML Model**
    python src/models/train_xgboost.py
 
 
@@ -149,10 +151,10 @@ Model is saved to:
 artifacts/models/xgboost_model.pkl
 ```
 
-  **-Run Streamlit App**
+     **-Run Streamlit App**
   ```
 streamlit run app/streamlit_app.py
 
 ```
- **Example Output**
+ **####Example Output**
 <img width="1652" height="1072" alt="image" src="https://github.com/user-attachments/assets/f670e039-b91d-4057-b0e5-59e4be12d7c2" />
