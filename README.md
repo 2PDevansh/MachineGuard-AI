@@ -7,12 +7,12 @@
 ![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-black)
 
- **####Predictive Maintenance AI with RAG-Powered Engineer Assistant**
+#### **Predictive Maintenance AI with RAG-Powered Engineer Assistant**
 
 An end-to-end **Predictive Maintenance System** that combines classical machine learning with a **Retrieval-Augmented Generation (RAG)** based AI Maintenance Engineer. The system predicts equipment failure probability and provides **human-readable maintenance recommendations** using open-source LLMs.
 
 
-**##Key Features**
+## **Key Features**
 
 -Failure prediction using XGBoost Classifier
 
@@ -28,7 +28,7 @@ An end-to-end **Predictive Maintenance System** that combines classical machine 
 
 -Clean, modular industry-grade project structure
 
- **##System Architecture**
+## **System Architecture**
  
 Sensor Data
    ↓
@@ -42,7 +42,7 @@ LLM Maintenance Reasoning
    ↓
 Streamlit UI Output
 
- **##Tech Stack**
+## **Tech Stack**
  
        -Machine Learning
 
@@ -74,7 +74,7 @@ Streamlit UI Output
 
       -Google Colab (T4 GPU compatible)
 
-📁 **##Project Structure**
+## **Project Structure**
 ```
 PREDICTIVE_MAINTAINANCE-AI/
 │
@@ -115,7 +115,7 @@ PREDICTIVE_MAINTAINANCE-AI/
 └── README.md
 ```
 
- **##Dataset**
+## **Dataset**
 
            *-*Source**: UCI AI4I 2020 Predictive Maintenance Dataset
 
@@ -123,7 +123,7 @@ PREDICTIVE_MAINTAINANCE-AI/
 
           *-* **Target**: Machine failure (binary classification)
 
- **##Setup Instructions**
+## **Setup Instructions**
  
        **-Install dependencies**
   ```
@@ -156,5 +156,5 @@ artifacts/models/xgboost_model.pkl
 streamlit run app/streamlit_app.py
 
 ```
- **####Example Output**
+##### **Example Output**
 <img width="1652" height="1072" alt="image" src="https://github.com/user-attachments/assets/f670e039-b91d-4057-b0e5-59e4be12d7c2" />
