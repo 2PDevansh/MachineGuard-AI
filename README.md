@@ -7,7 +7,7 @@
 ![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-black)
 
-#### **Predictive Maintenance AI with RAG-Powered Engineer Assistant**
+# **Predictive Maintenance AI with RAG-Powered Engineer Assistant**
 
 An end-to-end **Predictive Maintenance System** that combines classical machine learning with a **Retrieval-Augmented Generation (RAG)** based AI Maintenance Engineer. The system predicts equipment failure probability and provides **human-readable maintenance recommendations** using open-source LLMs.
 
@@ -132,7 +132,7 @@ pip install -r requirements.txt
 
 ```
 
-      **-Build FAISS Knowledge Index (One-Time)**
+  **-Build FAISS Knowledge Index (One-Time)**
       
 ```
 
@@ -147,7 +147,7 @@ python src/llm/build_retriever.py
    -chunks.pkl
 ```
 
-     **-Train ML Model**
+  **-Train ML Model**
    python src/models/train_xgboost.py
 
 
@@ -161,5 +161,5 @@ artifacts/models/xgboost_model.pkl
 streamlit run app/streamlit_app.py
 
 ```
-#### **Example Output**
+## **Example Output**
 <img width="1652" height="1072" alt="image" src="https://github.com/user-attachments/assets/f670e039-b91d-4057-b0e5-59e4be12d7c2" />
