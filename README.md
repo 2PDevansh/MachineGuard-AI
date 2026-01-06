@@ -117,11 +117,11 @@ PREDICTIVE_MAINTAINANCE-AI/
 
 ## **Dataset**
 
-**-****Source**: UCI AI4I 2020 Predictive Maintenance Dataset
+**-** **Source**: UCI AI4I 2020 Predictive Maintenance Dataset
 
-**-****Type**: Industrial sensor telemetry
+**-** **Type**: Industrial sensor telemetry
 
-**-****Target**: Machine failure (binary classification)
+**-** **Target**: Machine failure (binary classification)
 
 ## **Setup Instructions**
  
@@ -156,10 +156,11 @@ Model is saved to:
 artifacts/models/xgboost_model.pkl
 ```
 
-     **-Run Streamlit App**
+   **Run Streamlit App**
+   
   ```
 streamlit run app/streamlit_app.py
-
 ```
+
 ## **Example Output**
 <img width="1652" height="1072" alt="image" src="https://github.com/user-attachments/assets/f670e039-b91d-4057-b0e5-59e4be12d7c2" />
