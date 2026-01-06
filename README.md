@@ -6,29 +6,29 @@
 ![FAISS](https://img.shields.io/badge/VectorDB-FAISS-lightgrey)
 ![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-black)
-Predictive Maintenance AI with RAG-Powered Engineer Assistant
 
-An end-to-end Predictive Maintenance System that combines classical machine learning with a Retrieval-Augmented Generation (RAG) based AI Maintenance Engineer. The system predicts equipment failure probability and provides human-readable maintenance recommendations using open-source LLMs.
+ **Predictive Maintenance AI with RAG-Powered Engineer Assistant**
 
-This project is designed with real-world MLOps structure, Colab-friendly constraints, and resume-grade engineering practices.
+An end-to-end **Predictive Maintenance System** that combines classical machine learning with a **Retrieval-Augmented Generation (RAG)** based AI Maintenance Engineer. The system predicts equipment failure probability and provides **human-readable maintenance recommendations** using open-source LLMs.
 
-🚀 Key Features
 
-Failure prediction using XGBoost Classifier
+**Key Features**
 
-Domain-driven feature engineering
+-Failure prediction using XGBoost Classifier
 
-Production-style training & inference pipelines
+-Domain-driven feature engineering
 
-FAISS-based RAG for maintenance knowledge retrieval
+-Production-style training & inference pipelines
 
-LLM-generated maintenance assessments
+-FAISS-based RAG for maintenance knowledge retrieval
 
-Streamlit dashboard for interactive inference
+-LLM-generated maintenance assessments
 
-Clean, modular industry-grade project structure
+-Streamlit dashboard for interactive inference
 
-🧠 System Architecture
+-Clean, modular industry-grade project structure
+
+ **System Architecture**
 Sensor Data
    ↓
 Preprocessing & Feature Engineering
@@ -41,38 +41,39 @@ LLM Maintenance Reasoning
    ↓
 Streamlit UI Output
 
-🛠 Tech Stack
-Machine Learning
+ **Tech Stack**
+-Machine Learning
 
-Python 3.10+
+-Python 3.10+
 
-XGBoost
+-XGBoost
 
-Scikit-learn
+-Scikit-learn
 
-Pandas, NumPy
+-Pandas, NumPy
 
-GenAI / RAG
+-GenAI / RAG
 
-Hugging Face Transformers
+-Hugging Face Transformers
 
-Sentence-Transformers
+-Sentence-Transformers
 
-FAISS (CPU)
+-FAISS (CPU)
 
-Open-source LLM (Colab-friendly)
+-Open-source LLM (Colab-friendly)
 
-MLOps & App
+-MLOps & App
 
-Streamlit
+-Streamlit
 
-Pickle (model persistence)
+-Pickle (model persistence)
 
-Modular pipeline design
+-Modular pipeline design
 
-Google Colab (T4 GPU compatible)
+-Google Colab (T4 GPU compatible)
 
-📁 Project Structure
+📁 **Project Structure**
+```
 PREDICTIVE_MAINTAINANCE-AI/
 │
 ├── app/
@@ -110,39 +111,48 @@ PREDICTIVE_MAINTAINANCE-AI/
 │
 ├── requirements.txt
 └── README.md
+```
 
-📊 Dataset
+ **Dataset**
 
-Source: UCI AI4I 2020 Predictive Maintenance Dataset
+**-** **Source**: UCI AI4I 2020 Predictive Maintenance Dataset
 
-Type: Industrial sensor telemetry
+**-** **Type**: Industrial sensor telemetry
 
-Target: Machine failure (binary classification)
+**-** **Target**: Machine failure (binary classification)
 
-⚙️ Setup Instructions
-1️⃣ Install dependencies
+ **Setup Instructions**
+ 
+ **-Install dependencies**
+  ```
 pip install -r requirements.txt
+```
 
-2️⃣ Build FAISS Knowledge Index (One-Time)
+  **-Build FAISS Knowledge Index (One-Time)**
+```
 python src/llm/build_retriever.py
+```
 
+**This creates**: 
+```
+   -faiss_index.bin
 
-This creates:
+   -chunks.pkl
+```
 
-faiss_index.bin
-
-chunks.pkl
-
-3️⃣ Train ML Model
-python src/models/train_xgboost.py
+  **-Train ML Model**
+   python src/models/train_xgboost.py
 
 
 Model is saved to:
-
+```
 artifacts/models/xgboost_model.pkl
+```
 
-4️⃣ Run Streamlit App
+  **-Run Streamlit App**
+  ```
 streamlit run app/streamlit_app.py
 
-🧪 Example Output
+```
+ **Example Output**
 <img width="1652" height="1072" alt="image" src="https://github.com/user-attachments/assets/f670e039-b91d-4057-b0e5-59e4be12d7c2" />
