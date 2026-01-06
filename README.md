@@ -125,7 +125,7 @@ PREDICTIVE_MAINTAINANCE-AI/
 
 ## **Setup Instructions**
  
- **-****Install dependencies**
+ **-** **Install dependencies**
        
   ```
 pip install -r requirements.txt
