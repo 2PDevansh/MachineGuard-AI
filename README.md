@@ -117,22 +117,27 @@ PREDICTIVE_MAINTAINANCE-AI/
 
 ## **Dataset**
 
-           *-*Source**: UCI AI4I 2020 Predictive Maintenance Dataset
+**-****Source**: UCI AI4I 2020 Predictive Maintenance Dataset
 
-          *-*Type**: Industrial sensor telemetry
+**-****Type**: Industrial sensor telemetry
 
-          *-* **Target**: Machine failure (binary classification)
+**-****Target**: Machine failure (binary classification)
 
 ## **Setup Instructions**
  
-       **-Install dependencies**
+       **Install dependencies**
+       
   ```
 pip install -r requirements.txt
+
 ```
 
       **-Build FAISS Knowledge Index (One-Time)**
+      
 ```
+
 python src/llm/build_retriever.py
+
 ```
 
 **This creates**: 
@@ -156,5 +161,5 @@ artifacts/models/xgboost_model.pkl
 streamlit run app/streamlit_app.py
 
 ```
-##### **Example Output**
+#### **Example Output**
 <img width="1652" height="1072" alt="image" src="https://github.com/user-attachments/assets/f670e039-b91d-4057-b0e5-59e4be12d7c2" />
