@@ -147,9 +147,11 @@ python src/llm/build_retriever.py
    -chunks.pkl
 ```
 
-  **-Train ML Model**
+**-Train ML Model**
+```
    python src/models/train_xgboost.py
 
+```
 
 Model is saved to:
 ```
