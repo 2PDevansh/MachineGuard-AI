@@ -33,10 +33,14 @@ An end-to-end **Predictive Maintenance System** that combines classical machine 
 Sensor Data
 
    ↓
+   
 Preprocessing & Feature Engineering
+
    ↓
+   
 XGBoost Failure Prediction
    ↓
+   
 FAISS Knowledge Retrieval
    ↓
 LLM Maintenance Reasoning
