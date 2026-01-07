@@ -39,12 +39,17 @@ Preprocessing & Feature Engineering
    ↓
    
 XGBoost Failure Prediction
+
    ↓
    
 FAISS Knowledge Retrieval
+
    ↓
+   
 LLM Maintenance Reasoning
+
    ↓
+   
 Streamlit UI Output
 
 ## **Tech Stack**
