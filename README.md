@@ -86,7 +86,7 @@ Streamlit UI Output
 
 ## **Project Structure**
 ```
-PREDICTIVE_MAINTAINANCE-AI/
+Predictive_Maintainenance-AI/
 │
 ├── app/
 │   └── streamlit_app.py
