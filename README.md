@@ -31,6 +31,7 @@ An end-to-end **Predictive Maintenance System** that combines classical machine 
 ## **System Architecture**
  
 Sensor Data
+
    ↓
 Preprocessing & Feature Engineering
    ↓
