@@ -5,7 +5,6 @@
 ![Streamlit](https://img.shields.io/badge/UI-Streamlit-red)
 ![FAISS](https://img.shields.io/badge/VectorDB-FAISS-lightgrey)
 ![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-black)
 
 # **Predictive Maintenance AI with RAG-Powered Engineer Assistant**
 
