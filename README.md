@@ -2,7 +2,7 @@
 ![XGBoost](https://img.shields.io/badge/Model-XGBoost-green)
 ![MLOps](https://img.shields.io/badge/MLOps-MLflow-orange)
 ![RAG](https://img.shields.io/badge/GenAI-RAG-purple)
-![Streamlit](https://img.shields.io/badge/UI-Streamlit-red)
+<img src="https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
 ![FAISS](https://img.shields.io/badge/VectorDB-FAISS-lightgrey)
 ![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
 
