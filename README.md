@@ -174,4 +174,4 @@ streamlit run app/streamlit_app.py
 ```
 
 ## **Example Output**
-<img width="1652" height="1072" alt="image" src="https://github.com/user-attachments/assets/f670e039-b91d-4057-b0e5-59e4be12d7c2" />
+<img width="1889" height="915" alt="image" src="https://github.com/user-attachments/assets/7537b3ba-2a2b-4721-b8c6-bfd713fe9cb5" />
