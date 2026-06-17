@@ -1,3 +1,5 @@
+# **MachineGuard AI with RAG-Powered Engineer Assistant**
+
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![XGBoost](https://img.shields.io/badge/Model-XGBoost-green)
 ![MLOps](https://img.shields.io/badge/MLOps-MLflow-orange)
@@ -6,7 +8,6 @@
 ![FAISS](https://img.shields.io/badge/VectorDB-FAISS-lightgrey)
 ![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
 
-# **MachineGuard AI with RAG-Powered Engineer Assistant**
 
 An end-to-end **Predictive Maintenance System** that combines classical machine learning with a **Retrieval-Augmented Generation (RAG)** based AI Maintenance Engineer. The system predicts equipment failure probability and provides **human-readable maintenance recommendations** using open-source LLMs.
 
