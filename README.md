@@ -67,26 +67,9 @@ Add screenshot here.
 
 ## System Architecture
 
-```text
-Sensor Data
-   |
-   v
-Preprocessing & Feature Engineering (src/features/build_features.py)
-   |
-   v
-XGBoost Failure Prediction (src/models/predict.py)
-   |
-   v
-Risk Level + Confidence Mapping (api/main.py)
-   |
-   +--> Fast local maintenance rules (default)
-   |
-   +--> Optional: FAISS Retrieval -> LLM Reasoning
-             (src/llm/retriever.py, src/llm/maintenance_assistant.py)
-   |
-   v
-Frontend Console (frontend/)  --or--  Streamlit UI (app/streamlit_app.py)
-```
+<img width="376" height="417" alt="image" src="https://github.com/user-attachments/assets/7f282024-2a2b-4673-8292-e54c345e3d89" />
+
+
 
 ---
 
