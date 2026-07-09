@@ -40,15 +40,18 @@ The application predicts machine failure probability from sensor readings and gi
 
 ### Diagnostic Dashboard
 
-Add screenshot here.
+  <img width="887" height="474" alt="image" src="https://github.com/user-attachments/assets/5e24c861-feb5-4b28-acb7-6067c0b6d189" />
+
 
 ### Assistant Page
 
-Add screenshot here.
+  <img width="890" height="476" alt="image" src="https://github.com/user-attachments/assets/0971bfe7-cc1b-4aad-9fb2-a040108db984" />
+
 
 ### Session Log
 
-Add screenshot here.
+  <img width="899" height="233" alt="image" src="https://github.com/user-attachments/assets/081f76f0-ec78-4f14-aa8f-1938fda428e0" />
+
 
 ---
 
