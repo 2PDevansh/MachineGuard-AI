@@ -8,7 +8,7 @@
 <img src="https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
 ![Frontend](https://img.shields.io/badge/UI-HTML%2FCSS%2FJS-e34c26)
 ![Status](https://img.shields.io/badge/Status-Production--Ready-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+
 
 MachineGuard AI is a predictive maintenance project for industrial machine monitoring. It combines an XGBoost failure-risk model, a FastAPI backend, a browser-based control-room UI, and a lightweight maintenance assistant grounded in local maintenance rules — with an optional RAG/LLM mode for deeper explanations.
 
