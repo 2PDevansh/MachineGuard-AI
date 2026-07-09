@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MachineGuard AI — Predictive Maintenance Console</title>
+<meta name="description" content="Console for predictive failure diagnostics and AI maintenance guidance.">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grid-veil" aria-hidden="true"></div>
+
+<div class="app">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
+    <div class="topbar__brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 2L4 8v9c0 7.4 5.1 13.8 12 15.5C22.9 30.8 28 24.4 28 17V8L16 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M11 16.5l3.2 3.2L21.5 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="brand-text">
+        <span class="brand-title">MACHINEGUARD<span class="brand-title--accent">·AI</span></span>
+        <span class="brand-subtitle">Predictive Maintenance Console</span>
+      </div>
+    </div>
+
+    <nav class="topbar__nav" aria-label="Primary">
+      <button class="nav-tab is-active" data-view="dashboard" type="button">Diagnostic</button>
+      <button class="nav-tab" data-view="assistant" type="button">Assistant</button>
+      <button class="nav-tab" data-view="log" type="button">Session Log</button>
+    </nav>
+
+    <div class="topbar__status">
+      <span class="status-dot" id="connStatusDot" data-state="offline" aria-hidden="true"></span>
+      <span class="status-label" id="connStatusLabel">demo mode</span>
+    </div>
+  </header>
+
+  <!-- ============ MAIN: DIAGNOSTIC VIEW ============ -->
+  <main class="view is-active" id="view-dashboard">
+
+    <!-- Sensor input console -->
+    <section class="panel panel--console" aria-labelledby="consoleHeading">
+      <header class="panel__head">
+        <h2 id="consoleHeading">Sensor Input</h2>
+        <span class="panel__eyebrow">AI4I-2020 telemetry frame</span>
+      </header>
+
+      <form id="sensorForm" class="console-form" novalidate>
+
+        <fieldset class="field-group">
+          <legend>Product type</legend>
+          <div class="type-toggle" role="radiogroup" aria-label="Product quality type">
+            <input type="radio" name="type" id="type-L" value="L" checked>
+            <label for="type-L"><span class="type-letter">L</span>Low</label>
+            <input type="radio" name="type" id="type-M" value="M">
+            <label for="type-M"><span class="type-letter">M</span>Medium</label>
+            <input type="radio" name="type" id="type-H" value="H">
+            <label for="type-H"><span class="type-letter">H</span>High</label>
+          </div>
+        </fieldset>
+
+        <div class="field-row">
+          <label for="airTemp">Air temperature
+            <span class="unit">K</span>
+          </label>
+          <input type="number" id="airTemp" name="airTemp" step="0.1" value="298.5" required inputmode="decimal">
+        </div>
+
+        <div class="field-row">
+          <label for="processTemp">Process temperature
+            <span class="unit">K</span>
+          </label>
+          <input type="number" id="processTemp" name="processTemp" step="0.1" value="308.7" required inputmode="decimal">
+        </div>
+
+        <div class="field-row">
+          <label for="rotSpeed">Rotational speed
+            <span class="unit">rpm</span>
+          </label>
+          <input type="number" id="rotSpeed" name="rotSpeed" step="1" value="1450" required inputmode="numeric">
+        </div>
+
+        <div class="field-row">
+          <label for="torque">Torque
+            <span class="unit">Nm</span>
+          </label>
+          <input type="number" id="torque" name="torque" step="0.1" value="42.5" required inputmode="decimal">
+        </div>
+
+        <div class="field-row">
+          <label for="toolWear">Tool wear
+            <span class="unit">min</span>
+          </label>
+          <input type="number" id="toolWear" name="toolWear" step="1" value="115" required inputmode="numeric">
+        </div>
+
+        <button type="submit" class="btn-run" id="runBtn">
+          <span class="btn-run__label">Run Diagnostic</span>
+          <span class="btn-run__spinner" aria-hidden="true"></span>
+        </button>
+
+        <button type="button" class="btn-ghost" id="loadSampleBtn">Load random sample</button>
+      </form>
+    </section>
+
+    <!-- Results column -->
+    <section class="results-col">
+
+      <!-- Gauge card -->
+      <div class="panel panel--gauge" aria-labelledby="gaugeHeading">
+        <header class="panel__head">
+          <h2 id="gaugeHeading">Failure Risk</h2>
+          <span class="panel__eyebrow" id="gaugeTimestamp">awaiting reading</span>
+        </header>
+
+        <div class="gauge-wrap">
+          <svg id="gaugeSvg" viewBox="0 0 240 150" aria-hidden="true"></svg>
+          <div class="gauge-readout">
+            <span class="gauge-readout__value" id="gaugeValue">--<span class="gauge-readout__pct">%</span></span>
+            <span class="gauge-readout__tag" id="gaugeTag">STANDBY</span>
+          </div>
+        </div>
+
+        <div class="gauge-legend">
+          <span><i class="dot dot--safe"></i>0–30 nominal</span>
+          <span><i class="dot dot--watch"></i>30–65 elevated</span>
+          <span><i class="dot dot--crit"></i>65–100 critical</span>
+        </div>
+      </div>
+
+      <!-- Failure mode + recommendation -->
+      <div class="panel panel--diagnosis" aria-labelledby="diagHeading">
+        <header class="panel__head">
+          <h2 id="diagHeading">Diagnosis</h2>
+        </header>
+        <dl class="diag-grid" id="diagGrid">
+          <div class="diag-row">
+            <dt>Predicted mode</dt>
+            <dd id="diagMode">—</dd>
+          </div>
+          <div class="diag-row">
+            <dt>Model confidence</dt>
+            <dd id="diagConfidence">—</dd>
+          </div>
+        </dl>
+
+        <h3 class="reco-heading">Recommended action <span class="reco-heading__src">RAG · maintenance_guidelines.txt</span></h3>
+        <ul class="reco-list" id="recoList">
+          <li class="reco-empty">Run a diagnostic to generate a recommendation from the knowledge base.</li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ============ MAIN: ASSISTANT VIEW ============ -->
+  <main class="view" id="view-assistant">
+    <section class="panel panel--terminal" aria-labelledby="terminalHeading">
+      <header class="panel__head">
+        <h2 id="terminalHeading">Maintenance Assistant</h2>
+        <span class="panel__eyebrow">FAISS retrieval · LLM reasoning</span>
+      </header>
+
+      <div class="terminal" id="terminalLog" role="log" aria-live="polite">
+        <div class="term-line term-line--system">
+          <span class="term-prompt">sys</span>
+          <span>Assistant ready. Ask about failure modes, sensor thresholds, or maintenance procedures from the knowledge base.</span>
+        </div>
+      </div>
+
+      <form id="chatForm" class="terminal-input">
+        <span class="term-caret">&gt;</span>
+        <input type="text" id="chatInput" placeholder="e.g. What causes tool wear failure and how is it prevented?" autocomplete="off">
+        <button type="submit" aria-label="Send">Send</button>
+      </form>
+
+      <div class="quick-prompts" id="quickPrompts">
+        <button type="button" data-prompt="What are the early warning signs of heat dissipation failure?">Heat dissipation warning signs</button>
+        <button type="button" data-prompt="How often should tool wear be inspected on a CNC spindle?">Tool wear inspection interval</button>
+        <button type="button" data-prompt="What torque range indicates an overstrain risk?">Overstrain torque range</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ MAIN: LOG VIEW ============ -->
+  <main class="view" id="view-log">
+    <section class="panel panel--history" aria-labelledby="historyHeading">
+      <header class="panel__head">
+        <h2 id="historyHeading">Session Log</h2>
+        <span class="panel__eyebrow" id="historyCount">0 readings</span>
+      </header>
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Type</th>
+            <th>Air T</th>
+            <th>Proc T</th>
+            <th>Speed</th>
+            <th>Torque</th>
+            <th>Wear</th>
+            <th>Risk</th>
+          </tr>
+        </thead>
+        <tbody id="historyBody">
+          <tr class="history-empty">
+            <td colspan="8">No diagnostics run this session yet.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>MachineGuard AI · XGBoost + FAISS RAG assistant</span>
+    <span class="footer__sep">·</span>
+    <span id="apiTargetLabel">API: not configured (demo mode)</span>
+  </footer>
+
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/gauge.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
